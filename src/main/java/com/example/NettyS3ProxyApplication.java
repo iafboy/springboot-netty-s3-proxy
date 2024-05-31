@@ -73,7 +73,6 @@ public class NettyS3ProxyApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
         EventLoopGroup bossGroup = Epoll.isAvailable()? new EpollEventLoopGroup(1):new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup(workThreadCount);
         try {
